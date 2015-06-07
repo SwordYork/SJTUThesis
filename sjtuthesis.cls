@@ -244,7 +244,7 @@
 \newcommand\confidential[1]{\def\sjtu@value@confidential{#1}}
 \newcommand\school[1]{\def\sjtu@value@school{#1}}
 \newcommand\degree[1]{\def\sjtu@value@degree{#1}}
-\renewcommand\title[2][\sjtu@value@title]{%
+\renewcommand\title[2][\sjtu@value@englishtitle]{%
   \def\sjtu@value@title{#2}
   \def\sjtu@value@titlemark{\MakeUppercase{#1}}}
 \renewcommand\author[1]{\def\sjtu@value@author{#1}}
