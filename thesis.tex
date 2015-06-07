@@ -4,7 +4,8 @@
 %%==================================================
 
 % 双面打印
-\documentclass[doctor, adobefonts, openright, twoside, cs4size]{sjtuthesis}
+\documentclass[bachelor, adobefonts, openany, twoside, cs4size]{sjtuthesis}
+
 % \documentclass[bachelor, adobefonts, openany, oneside, cs4size, submit]{sjtuthesis} 
 % \documentclass[master, adobefonts, review]{sjtuthesis} 
 % \documentclass[%
@@ -69,10 +70,10 @@
 \include{tex/summary}
 
 \appendix	% 使用英文字母对附录编号，重新定义附录中的公式、图图表编号样式
-\renewcommand\theequation{\Alph{chapter}--\arabic{equation}}	
-\renewcommand\thefigure{\Alph{chapter}--\arabic{figure}}
-\renewcommand\thetable{\Alph{chapter}--\arabic{table}}
-\renewcommand\thealgorithm{\Alph{chapter}--\arabic{algorithm}}
+\renewcommand\theequation{\Alph{chapter}.\arabic{equation}}	
+\renewcommand\thefigure{\Alph{chapter}.\arabic{figure}}
+\renewcommand\thetable{\Alph{chapter}.\arabic{table}}
+\renewcommand\thealgorithm{\Alph{chapter}.\arabic{algorithm}}
 
 %% 附录内容，本科学位论文可以用翻译的文献替代。
 \include{tex/app_log}

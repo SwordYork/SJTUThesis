@@ -60,7 +60,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{subfigure}
 \RequirePackage{ccaption}
-\RequirePackage[backend=biber, style=caspervector,utf8, bibencoding=utf8, sorting=none]{biblatex}
+\RequirePackage[backend=biber, style=numeric, bibencoding=utf8, sorting=none]{biblatex}
 \RequirePackage{xcolor}
 \RequirePackage{wasysym}
 \RequirePackage{listings}
@@ -127,7 +127,7 @@
 \renewcommand{\listalgorithmname}{\sjtu@listalgorithmname}
 \renewcommand{\lstlistingname}{\sjtu@value@listingname}
 % Title Settings at the chapter Level
-\CTEXsetup[nameformat={\Large\bfseries}]{chapter}
+\CTEXsetup[nameformat={\Large\raggedright}]{chapter}
 \CTEXsetup[titleformat={\Large\bfseries}]{chapter}
 \CTEXsetup[beforeskip={15\p@}]{chapter}
 \CTEXsetup[afterskip={12\p@}]{chapter}
@@ -146,8 +146,12 @@
 \CTEXsetup[beforeskip={-2ex \@plus -1ex \@minus -.2ex}]{subsubsection}
 \CTEXsetup[afterskip={1.0ex \@plus .2ex}]{subsubsection}
 
+\CTEXsetup[name={,\space}, number=\arabic{chapter}, numberformat={\Huge\bfseries}]{chapter}
+\CTEXsetup[name={{\bfseries Appendix}\space},]{appendix}
+
 % bullets in the item
 \renewcommand{\labelitemi}{\ensuremath{\bullet}}
+
 
 %% Graphic path & file extension
 \graphicspath{{fig/}{figure/}{figures/}{logo/}{logos/}{graph/}{graphs}}
@@ -165,10 +169,10 @@
 \renewcommand{\floatpagefraction}{0.60}
 
 % 定公式、图、表、算法的编号为"3-1"的形式，即分隔符由.变为短杠
-\renewcommand{\theequation}{\arabic{chapter}--\arabic{equation}}
-\renewcommand{\thefigure}{\arabic{chapter}--\arabic{figure}}
-\renewcommand{\thetable}{\arabic{chapter}--\arabic{table}}
-\renewcommand{\thealgorithm}{\arabic{chapter}--\arabic{algorithm}}
+% \renewcommand{\theequation}{\arabic{chapter}--\arabic{equation}}
+% \renewcommand{\thefigure}{\arabic{chapter}--\arabic{figure}}
+% \renewcommand{\thetable}{\arabic{chapter}--\arabic{table}}
+% \renewcommand{\thealgorithm}{\arabic{chapter}--\arabic{algorithm}}
 
 % Setting Package listings/lstlistings
 \lstset{tabsize=4, %
@@ -208,6 +212,7 @@
   \newtheorem{lem}[thm]{\sjtu@label@lem~}
   \newtheorem{prop}[thm]{\sjtu@label@prop~}
   \newtheorem{cor}[thm]{\sjtu@label@cor~}
+  \newtheorem{ass}[thm]{\sjtu@label@ass~}
 \theoremstyle{definition}
   \newtheorem{defn}{\sjtu@label@defn~}[chapter]
   \newtheorem{conj}{\sjtu@label@conj~}[chapter]
@@ -256,11 +261,23 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-  {\songti\zihao{-3}\sjtu@label@statement}
+  \begin{figure}[!htp]
+ \centering
+ \includegraphics[angle=0,origin=br,width=13cm]{sjtu.jpg}
+\end{figure}
+{\heiti\zihao{-1}\scshape \sjtu@value@englishschool}
   \vskip\stretch{1}
-  {\heiti\zihao{3}\sjtu@value@title}
+  {\kaishu\zihao{1}\sjtu@label@thesistype}
+\vskip 15pt
+  {\heiti\zihao{-2} \MakeUppercase { \sjtu@value@englishdegree'S THESIS}}
+  \begin{figure}[!htp]
+ \centering
+ \includegraphics[angle=0,origin=br,width=4cm]{sjtubadge.png}
+\end{figure}
+\vskip 15pt
+{\heiti\zihao{-2}  \sjtu@value@title}
   \vskip\stretch{1}
-  {\fangsong\zihao{4}}
+      {\fangsong\zihao{5}}
   \def\tabcolsep{1pt}
   \def\arraystretch{1.5}
   \begin{tabular}{rl}
@@ -272,7 +289,7 @@
         \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@coadvisor\end{CJKfilltwosides} & \underline{\makebox[150pt]{}} \\ 
       \fi
     \else
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@author\end{CJKfilltwosides}	& \underline{\makebox[150pt]{\sjtu@value@author}} \\
+    \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@author\end{CJKfilltwosides}	& \underline{\makebox[150pt]{\sjtu@value@author}} \\
       \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@studentnumber\end{CJKfilltwosides} & \underline{\makebox[150pt]{\sjtu@value@studentnumber}} \\
       \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@advisor\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@advisor}} \\ 
       \ifx\sjtu@value@coadvisor\undefined\else
@@ -374,7 +391,7 @@
 	  \fancyhf{}
 	  \fancyhead[L]{\includegraphics[width=0.22\textwidth]{figure/sjtubanner}}
 	  \fancyhead[R]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
-	  \fancyfoot[C]{\small 第~{\bfseries\thepage}~页\,共~{\bfseries\pageref{LastPage}}~页}
+	  \fancyfoot[C]{\small \bf\thepage }
 	  \renewcommand{\headheight}{32pt}
 	}
 	%% 开章页页眉页脚
@@ -382,7 +399,7 @@
 	  \fancyhf{}%
 	  \fancyhead[L]{\nouppercase{\small\kaishu\includegraphics[width=0.22\textwidth]{figure/sjtubanner}}}
 	  \fancyhead[R]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
-	  \fancyfoot[C]{\small 第~{\bf\thepage}~页\,共~{\bf\pageref{LastPage}}~页}
+	  \fancyfoot[C]{\small \bf\thepage }
 	  \renewcommand{\headheight}{32pt}
 	}
 \else
@@ -394,7 +411,7 @@
 	    \fancyhead[RO]{\nouppercase{\small\kaishu\leftmark}}
 	    \fancyhead[LE]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
 	    \fancyfoot[C]{\small ---~{\bfseries\thepage}~---}
-	    \renewcommand{\headheight}{32pt}
+		\renewcommand{\headheight}{32pt}
 	  }
 	  %% 开章页页眉页脚
 	  \fancypagestyle{plain}{
@@ -403,7 +420,7 @@
 	    \fancyhead[RO]{\nouppercase{\small\kaishu\leftmark}}
 	    \fancyhead[LE]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
 	    \fancyfoot[C]{\small ---~{\bf\thepage}~---}
-	    \renewcommand{\headheight}{32pt}
+		\renewcommand{\headheight}{32pt}
 	  }
 	\else
 	%% 正文页
