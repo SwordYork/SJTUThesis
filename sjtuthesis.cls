@@ -116,7 +116,7 @@
 \setmainfont{TeX Gyre Termes}
 
 %% 行距缩放因子
-\linespread{1.3}
+\linespread{1.0}
 
 %% CTeX Settings
 % 名称：目录、表格索引、插图索引、算法、算法索引、代码
