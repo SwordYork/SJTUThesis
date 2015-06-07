@@ -1,12 +1,12 @@
 What is SJTUThesis?
 ======
 
-SJTUThesis is an *unofficial* XeLaTeX template for preparing bachelor, master, or doctor thesis in Shanghai Jiao Tong University.
+SJTUThesis-EnglishVersion is based on SJTUThesis which is an *unofficial* XeLaTeX template for preparing bachelor, master, or doctor thesis in Shanghai Jiao Tong University.
 
 上海交通大学学位论文模板
 ======
 
-这是为撰写上海交通大学学士、硕士或博士论文而准备的XeLaTeX模板，非官方出品。生成的学位论文文件参见[README.pdf][README]。
+这是为撰写上海交通大学学士、硕士或博士论文而准备的英文版XeLaTeX模板，非官方出品。生成的学位论文文件参见[README.pdf][README]。
 
 如何使用
 ------
@@ -72,6 +72,6 @@ SJTUThesis is an *unofficial* XeLaTeX template for preparing bachelor, master, o
 软件许可证
 ------
 
-上海交通大学校徽图片(```sjtulog.png```)和横幅图片(```sjtubanner.png```)的版权归原作者所有。其他部分使用[MIT License](LICENSE)授权。
+上海交通大学图片(```sjtu.jpg```)，上海交通大学校徽图片(```sjtulog.png```, ```sjtubadge.png```)和横幅图片(```sjtubanner.png```)的版权归原作者所有。其他部分使用[MIT License](LICENSE)授权。
 
 [README]: https://s3.amazonaws.com/sjtuthesis/README.pdf
