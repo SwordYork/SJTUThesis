@@ -151,7 +151,8 @@
 
 % bullets in the item
 \renewcommand{\labelitemi}{\ensuremath{\bullet}}
-
+\renewcommand{\figurename}{Figure }
+\renewcommand{\tablename}{Table }
 
 %% Graphic path & file extension
 \graphicspath{{fig/}{figure/}{figures/}{logo/}{logos/}{graph/}{graphs}}
